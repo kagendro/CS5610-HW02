@@ -28,7 +28,6 @@ for (var i=0;i<operator.length;i++) {
 			printOutput("");
 		}
 		else {
-			console.log("Line 30, Else")
 			var output = getOutput();
 			var history = getHistory();
 			
@@ -37,10 +36,7 @@ for (var i=0;i<operator.length;i++) {
 			if(history==""){
 				// get operation
 				var operation = this.id;
-				console.log("operation = ", operation)
-				console.log("history is null")
 				history = output + operation;
-				console.log("history = ", history)
 				
 				// Set history, print it
 				printHistory(history)
@@ -50,9 +46,7 @@ for (var i=0;i<operator.length;i++) {
 			// if history exists
 			else{
 				// make sure operation is working correctly
-				console.log(history + output)
 				result= eval(history + output);
-				console.log("result = ", result)
 				printOutput(result);
 				printHistory("");
 			}
@@ -66,7 +60,6 @@ for (var i=0;i<number.length;i++) {
 		var output = getOutput();
 		if(output!=NaN){
 			output = output + this.id;
-			console.log("output = ", output)
 			printOutput(output);
 		}
 	})
