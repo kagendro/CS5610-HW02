@@ -19,6 +19,7 @@ body {
 
 #result {
 	height: 100px;
+	padding-right: 5px;
 }
 
 #history {
@@ -30,12 +31,27 @@ body {
 	color: rgba(0,0,0,.75);
 }
 
+#operation {
+	text-align: left;
+	height: 20px;
+	margin: 0 20px;
+	padding-top: 20px;
+	font-size: 15px;
+	color: rgba(0,0,0,.75);
+}
+
 #output {
 	text-align: right;
-	height: 60px;
+	padding: 5px;
+	overflow: scroll;
+	height: 40px;
 	margin: 10px 20px;
 	font-size: 30px;
 	color: rgba(0,0,0,.75);
+}
+
+#output-value {
+	margin-top: 0;
 }
 
 #keyboard {

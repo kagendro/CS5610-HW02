@@ -6,14 +6,13 @@ function printHistory(num) {
 	document.getElementById("history-value").innerText=num;
 }
 
+
 function getOutput() {
 	return document.getElementById("output-value").innerText;
 }
 
 function printOutput(num) {
-	
 	document.getElementById("output-value").innerText=num;
-
 }
 
 
@@ -29,16 +28,33 @@ for (var i=0;i<operator.length;i++) {
 			printOutput("");
 		}
 		else {
+			console.log("Line 30, Else")
 			var output = getOutput();
-			alert(getOutput());
 			var history = getHistory();
-			alert(getHistory());
-			if(output!=""){
-				history = history + output;
+			
+
+			// if history is null
+			if(history==""){
+				// get operation
+				var operation = this.id;
+				console.log("operation = ", operation)
+				console.log("history is null")
+				history = output + operation;
+				console.log("history = ", history)
+				
+				// Set history, print it
+				printHistory(history)
+				printOutput("")
 			}
+
+			// if history exists
 			else{
-				var result=eval(history);
+				// make sure operation is working correctly
+				console.log(history + output)
+				result= eval(history + output);
+				console.log("result = ", result)
 				printOutput(result);
+				printHistory("");
 			}
 		}	
 	});
@@ -50,12 +66,9 @@ for (var i=0;i<number.length;i++) {
 		var output = getOutput();
 		if(output!=NaN){
 			output = output + this.id;
+			console.log("output = ", output)
 			printOutput(output);
 		}
-
-
-
-
 	})
 }
 
